@@ -1,0 +1,26 @@
+@if (Model.IsDead())
+{
+    <p>Your Tomagotchi died</p>
+}
+else
+{
+    <p>@Model.Name</p>
+    <p>@Model.Food</p>
+    <p>@Model.Attention</p>
+    <p>@Model.Rest</p>
+
+
+    <form action="/tamagotchis/feed/@Model.Id" method="post">
+        <button type="submit">Feed Tamagotchi.</button>
+    </form>
+    
+    <form action="/tamagotchis/play/@Model.Id" method="post">
+        <button type="submit">Play with Tamagotchi.</button>
+    </form>
+    
+    <form action="/tamagotchis/sleep/@Model.Id" method="post">
+        <button type="submit">Send Tamagotchi to bed.</button>
+    </form>
+}
+<a href="/tamagotchis">See list of Tamagotchi</a>
+

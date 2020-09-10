@@ -1,0 +1,14 @@
+@using Tamagotchi.Models;
+
+<a href="/tamagotchis/new">Create another Tamagotchi</a>
+@foreach (TamagotchiInstance item in Model)
+{
+    <a href="/tamagotchis/@item.Id"><p>@item.Name</p></a> 
+}
+
+<form action="/tamagotchis/time" method="post">
+    <button type="submit">Make time pass for all Tamagotchis.</button>
+</form>
+<form action="/tamagotchis/delete" method="post">
+    <button type="submit">Delete all the Tamagotchis.</button>
+</form>
